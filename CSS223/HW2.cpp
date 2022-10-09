@@ -20,7 +20,7 @@ private:
 public:
     Polynomial()
     {
-        cout << "Polynomial created." << endl;
+        // cout << "Polynomial created." << endl;
         head = tail = NULL;
     }
     ~Polynomial()
@@ -32,7 +32,7 @@ public:
             head = head->next;
             delete temp;
         }
-        cout << "Polynomial deleted." << endl;
+        // cout << "Polynomial deleted." << endl;
     }
 
     void Insert(float coeff, int exp)
