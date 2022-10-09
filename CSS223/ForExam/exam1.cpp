@@ -61,7 +61,7 @@ void mergeSort(int array[], int const begin, int const end)
     merge(array, begin, mid, end);
 }
 
-int main()
+main()
 {
     int sizenumberin;
     cout << "Enter a number: ";
@@ -83,7 +83,7 @@ int main()
     cout << "First " << sizenumberout << " number is ";
     if (sizenumberout <= sizenumberin)
     {
-        for(int j = 0; j < sizenumberout; j++)
+        for (int j = 0; j < sizenumberout; j++)
         {
             cout << n[j] << " ";
         }
@@ -92,4 +92,5 @@ int main()
     {
         cout << "Error";
     }
+    cout << "BIG O: O(n)";
 }

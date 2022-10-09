@@ -26,5 +26,6 @@ main()
         }
     }
     cout << "There is no " << s << " in " << w << "!";
-    return 0;
+    cout << endl;
+    cout << "BIG O: O(n)";
 }

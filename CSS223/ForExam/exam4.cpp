@@ -24,7 +24,7 @@ bool areAnagram(char* str1, char* str2)
 	return true;
 }
 
-int main()
+main()
 {
     // True
 	char str1[] = "CARE";
@@ -44,10 +44,10 @@ int main()
 	// char str1[] = "AHDA";
 	// char str2[] = "BBHB";
 
-	if (areAnagram(str1, str2))
+	if (areAnagram(str1, str2)){
 		cout << str1 << " & " << str2 << " are anagram" << endl;
-	else
+	}
+	else{
 		cout << str1 << " & " << str2 << " are not anagram" << endl;
-
-	return 0;
+	}
 }
