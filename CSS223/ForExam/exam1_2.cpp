@@ -51,28 +51,33 @@ void quickSort(int arr[], int start, int end)
 
 int main()
 {
+	int sizenumberin;
+    cout << "Enter a number: ";
+    cin >> sizenumberin;
+    cout << "You entered Size of Number: " << sizenumberin << endl;
+    int n[sizenumberin] = {};
+    for (int j = 0; j < sizenumberin; j++)
+    {
+        cout << "Enter a number: ";
+        cin >> n[j];
+    }
 
-	int arr[] = { 9, 3, 4, 2, 1, 8 };
-	int n = 6;
-
-	quickSort(arr, 0, n - 1);
+	quickSort(n, 0, sizenumberin - 1);
 
     int sizenumberout;
     cout << "Enter a number output: ";
     cin >> sizenumberout;
     cout << "First " << sizenumberout << " number is ";
-    if (sizenumberout <= n)
+    if (sizenumberout <= sizenumberin)
     {
         for (int i = 0; i < sizenumberout; i++)
         {
-            cout << arr[i] << " ";
+            cout << n[i] << " ";
         }
     }
     else
     {
         cout << "Error";
     }
-    cout << endl;
-    cout << "BIG O: O(nlogn)";
 	return 0;
 }
