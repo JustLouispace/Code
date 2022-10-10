@@ -27,16 +27,16 @@ bool areAnagram(char* str1, char* str2)
 main()
 {
     // True
-	char str1[] = "CARE";
-	char str2[] = "RACE";
+	// char str1[] = "CARE";
+	// char str2[] = "RACE";
     // char str1[] = "PART";
     // char str2[] = "TRAP";
     // char str1[] = "LISTEN";
     // char str2[] = "SILENT";
 
     // False
-    // char str1[] = "ZXCVBNM";
-    // char str2[] = "ASDFGHJ";
+    char str1[] = "ZXCVBNM";
+    char str2[] = "ASDFGHJ";
 	// char str1[] = "zxcvbnm";
 	// char str2[] = "ZXCVBNM";
 	// char str1[] = "ahda";

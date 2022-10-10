@@ -1,202 +1,72 @@
-// Polynomial addition and multiplication with linked lists
+// Multi-column-sorting
 
 #include <iostream>
+#include <string>  
 
 using namespace std;
 
-struct Node
-{
-    float coefficient;
-    int degree;
-    Node *next;
-};
 
-class Polynomial
-{
-private:
-    Node *head;
-    Node *tail;
-
-public:
-    Polynomial()
-    {
-        // cout << "Polynomial created." << endl;
-        head = tail = NULL;
-    }
-    ~Polynomial()
-    {
-        Node *temp;
-        while (head != NULL)
-        {
-            temp = head;
-            head = head->next;
-            delete temp;
-        }
-        // cout << "Polynomial deleted." << endl;
-    }
-
-    void Insert(float coeff, int exp)
-    {
-
-        Node *new_node = new Node();
-        new_node->coefficient = coeff;
-        new_node->degree = exp;
-        if (head == NULL)
-        {
-            head = tail = new_node;
-        }
-        else
-        {
-            if (exp > head->degree)
-            {
-                new_node->next = head;
-                head = new_node;
+void sort(int arr[][3], int n) {
+    int temp[3];
+    for (int i = 0; i < n; i++) {
+        for (int j = i; j < n; j++) {
+            if (arr[i][0] > arr[j][0]) {
+                temp[0] = arr[i][0];
+                temp[1] = arr[i][1];
+                temp[2] = arr[i][2];
+                arr[i][0] = arr[j][0];
+                arr[i][1] = arr[j][1];
+                arr[i][2] = arr[j][2];
+                arr[j][0] = temp[0];
+                arr[j][1] = temp[1];
+                arr[j][2] = temp[2];
             }
-            else
-            {
-                Node *temp = head;
-                while (temp->next != NULL)
-                {
-                    if (temp->next->degree < exp)
-                    {
-                        new_node->next = temp->next;
-                        temp->next = new_node;
-                        return;
-                    }
-                    temp = temp->next;
+            else if (arr[i][0] == arr[j][0]) {
+                if (arr[i][1] > arr[j][1]) {
+                    temp[0] = arr[i][0];
+                    temp[1] = arr[i][1];
+                    temp[2] = arr[i][2];
+                    arr[i][0] = arr[j][0];
+                    arr[i][1] = arr[j][1];
+                    arr[i][2] = arr[j][2];
+                    arr[j][0] = temp[0];
+                    arr[j][1] = temp[1];
+                    arr[j][2] = temp[2];
                 }
-                tail->next = new_node;
-                tail = new_node;
-            }
-        }
-    }
-
-    void add(Node *head1, Node *head2)
-    {
-        Node *temp1, *temp2;
-        temp1 = head1;
-        temp2 = head2;
-        while (temp1 != NULL && temp2 != NULL)
-        {
-            if (temp1->degree == temp2->degree)
-            {
-                Insert(temp1->coefficient + temp2->coefficient, temp1->degree);
-                temp1 = temp1->next;
-                temp2 = temp2->next;
-            }
-            else if (temp1->degree > temp2->degree)
-            {
-                Insert(temp1->coefficient, temp1->degree);
-                temp1 = temp1->next;
-            }
-            else
-            {
-                Insert(temp2->coefficient, temp2->degree);
-                temp2 = temp2->next;
-            }
-        }
-        while (temp1 != NULL)
-        {
-            Insert(temp1->coefficient, temp1->degree);
-            temp1 = temp1->next;
-        }
-        while (temp2 != NULL)
-        {
-            Insert(temp2->coefficient, temp2->degree);
-            temp2 = temp2->next;
-        }
-    }
-
-    void multi(Node *head1, Node *head2)
-    {
-        Node *temp1, *temp2;
-        temp1 = head1;
-        temp2 = head2;
-        float arrcoeff[20] = {}, coeffic, t = 0;
-        int arrexp[20] = {}, exp, count = 0;
-        while (temp1 != NULL)
-        {
-            temp2 = head2;
-            while (temp2 != NULL)
-            {
-                t = 0;
-                coeffic = temp1->coefficient * temp2->coefficient;
-                exp = temp1->degree + temp2->degree;
-                for (int i = 0; i < count; i++)
-                {
-                    if (exp == arrexp[i])
-                    {
-                        arrcoeff[i] += coeffic;
-                        t = 1;
-                        break;
+                else if (arr[i][1] == arr[j][1]) {
+                    if (arr[i][2] > arr[j][2]) {
+                        temp[0] = arr[i][0];
+                        temp[1] = arr[i][1];
+                        temp[2] = arr[i][2];
+                        arr[i][0] = arr[j][0];
+                        arr[i][1] = arr[j][1];
+                        arr[i][2] = arr[j][2];
+                        arr[j][0] = temp[0];
+                        arr[j][1] = temp[1];
+                        arr[j][2] = temp[2];
                     }
                 }
-                if (t == 0)
-                {
-                    arrcoeff[count] = coeffic;
-                    arrexp[count] = exp;
-                    count++;
-                }
-                temp2 = temp2->next;
             }
-            temp1 = temp1->next;
-        }
-        for (int i = 0; i < count; i++)
-        {
-            Insert(arrcoeff[i], arrexp[i]);
         }
     }
+}
 
-    Node *Get_Head()
-    {
-        return head;
+int main() {
+    int arr[9][3] = {{1,2,3},{1,2,2},{1,1,1},{2,2,2},{2,1,1},{2,1,2},{3,3,3},{3,2,2},{3,1,1}};
+    cout << "Before sorting" << endl;
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
     }
 
-    void Show()
-    {
-        Node *temp = head;
-        if (temp != NULL)
-        {
-            while (temp != NULL)
-            {
-                cout << temp->coefficient << "x^" << temp->degree << "+";
-                temp = temp->next;
-            }
-            cout << "\b \b" << endl;
+    cout << "After sorting" << endl;
+    sort(arr, 9);
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << arr[i][j] << " ";
         }
-        else
-        {
-            cout << "The list is empty.\n";
-        }
+        cout << endl;
     }
-};
-
-main()
-{
-    Polynomial a;
-    Polynomial b;
-    Polynomial c;
-    Polynomial d;
-    a.Insert(5, 5);
-    a.Insert(3, 3);
-    a.Insert(4, 1);
-    b.Insert(1, 4);
-    b.Insert(2, 6);
-    b.Insert(3, 5);
-
-    c.add(a.Get_Head(), b.Get_Head());
-    d.multi(a.Get_Head(), b.Get_Head());
-
-    cout << "\n---------------------------------------------\n"<< endl;
-    cout << "a = ";
-    a.Show();
-    cout << "b = ";
-    b.Show();
-    cout << "\nResult with Add Polynomial";
-    cout << "\nc = a + b\nc = ";
-    c.Show();
-    cout << "\nResult with Mutiple Polynomial" << endl;
-    cout << "d = a x b\nd = ";
-    d.Show();
-    cout << "\n---------------------------------------------" << endl;
 }
