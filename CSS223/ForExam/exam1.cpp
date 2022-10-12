@@ -64,7 +64,7 @@ void mergeSort(int array[], int const begin, int const end)
 main()
 {
     int sizenumberin;
-    cout << "Enter a number: ";
+    cout << "Enter a size of number: ";
     cin >> sizenumberin;
     cout << "You entered Size of Number: " << sizenumberin << endl;
     int n[sizenumberin] = {};
@@ -92,5 +92,6 @@ main()
     {
         cout << "Error";
     }
+    cout << endl;
     cout << "BIG O: O(n)";
 }
