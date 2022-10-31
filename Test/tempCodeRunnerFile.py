@@ -1,0 +1,1 @@
+s.remove("C:\Windows\System32")

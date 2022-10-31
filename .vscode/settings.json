@@ -41,5 +41,6 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "compare": "cpp"
-    }
+    },
+    "python.analysis.typeCheckingMode": "basic"
 }
