@@ -1,17 +1,17 @@
-public class FactoryPatternDemo2 {
-    public static void main(String[] args){
-        ShapeFactory2 shapeFactory = new ShapeFactory2();
+// public class FactoryPatternDemo2 {
+//     public static void main(String[] args){
+//         ShapeFactory2 shapeFactory = new ShapeFactory2();
         
-        Shape2 shape1 = shapeFactory.getShape("CIRCLE");
+//         Shape2 shape1 = shapeFactory.getShape("CIRCLE");
         
-        shape1.draw();
+//         shape1.draw();
         
-        Shape2 shape2 = shapeFactory.getShape("RECTANGLE");
+//         Shape2 shape2 = shapeFactory.getShape("RECTANGLE");
 
-        shape2.draw();
+//         shape2.draw();
         
-        Shape2 shape3 = shapeFactory.getShape("SQUARE");
+//         Shape2 shape3 = shapeFactory.getShape("SQUARE");
 
-        shape3.draw();
-    }
-}
+//         shape3.draw();
+//     }
+// }

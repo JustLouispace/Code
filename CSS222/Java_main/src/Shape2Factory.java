@@ -1,3 +1,3 @@
-public interface Shape2 {
-    void draw();
-}
+// public interface Shape2 {
+//     void draw();
+// }

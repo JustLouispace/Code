@@ -1,3 +1,4 @@
+# Tenten
 def won(c, n):
     if c[0] == n and c[1] == n and c[2] == n: return 1
     if c[3] == n and c[4] == n and c[5] == n: return 1
