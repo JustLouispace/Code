@@ -86,5 +86,4 @@ main()
                                         }
                                     }
     cout << "Game finished" << count << endl;
-    }
-
+}
