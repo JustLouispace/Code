@@ -36,6 +36,7 @@ int won(int c[9], int n)
 
 main()
 {
+    int count = 0;
     int result = 0;
     std::vector<char> pc = {' ', 'x', 'o'};
     int c[9] = {0,0,0, 0,0,0, 0,0,0};
@@ -49,6 +50,7 @@ main()
                                 for (c[7] = 0; c[7] < 3; c[7]++)
                                     for (c[8] = 0; c[8] < 3; c[8]++)
                                     {
+                                        count++;
                                         int countx = 0;
                                         int counto = 0;
                                         for (int x : c)
@@ -93,4 +95,5 @@ main()
                                             }
                                         }
                                     }
+    cout << count << endl;
 }
