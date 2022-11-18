@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <cmath>
+
 
 using namespace std;
 
@@ -37,7 +37,7 @@ int won(int c[9], int n)
 main()
 {
     int count = 0;
-    std::vector<char> pc = {' ', 'x', 'o'};
+    std::vector<char> playerchoose = {' ', 'x', 'o'};
     int c[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
     for (c[0] = 0; c[0] < 3; c[0]++)
         for (c[1] = 0; c[1] < 3; c[1]++)
@@ -53,11 +53,11 @@ main()
                                         {
                                             count++;
                                             cout << "Game " << count << endl;
-                                            cout << " " << pc[c[0]] << " | " << pc[c[1]] << " | " << pc[c[2]] << endl;
+                                            cout << " " << playerchoose[c[0]] << " | " << playerchoose[c[1]] << " | " << playerchoose[c[2]] << endl;
                                             cout << "-----------" << endl;
-                                            cout << " " << pc[c[3]] << " | " << pc[c[4]] << " | " << pc[c[5]] << endl;
+                                            cout << " " << playerchoose[c[3]] << " | " << playerchoose[c[4]] << " | " << playerchoose[c[5]] << endl;
                                             cout << "-----------" << endl;
-                                            cout << " " << pc[c[6]] << " | " << pc[c[7]] << " | " << pc[c[8]] << endl;
+                                            cout << " " << playerchoose[c[6]] << " | " << playerchoose[c[7]] << " | " << playerchoose[c[8]] << endl;
                                             cout << endl;
                                             cout << "1" << endl;
                                         }
@@ -65,22 +65,22 @@ main()
                                         {
                                             count++;
                                             cout << "Game " << count << endl;
-                                            cout << " " << pc[c[0]] << " | " << pc[c[1]] << " | " << pc[c[2]] << endl;
+                                            cout << " " << playerchoose[c[0]] << " | " << playerchoose[c[1]] << " | " << playerchoose[c[2]] << endl;
                                             cout << "-----------" << endl;
-                                            cout << " " << pc[c[3]] << " | " << pc[c[4]] << " | " << pc[c[5]] << endl;
+                                            cout << " " << playerchoose[c[3]] << " | " << playerchoose[c[4]] << " | " << playerchoose[c[5]] << endl;
                                             cout << "-----------" << endl;
-                                            cout << " " << pc[c[6]] << " | " << pc[c[7]] << " | " << pc[c[8]] << endl;
+                                            cout << " " << playerchoose[c[6]] << " | " << playerchoose[c[7]] << " | " << playerchoose[c[8]] << endl;
                                             cout << endl;
                                             cout << "-1" << endl;
                                         }
                                         else{
                                             count++;
                                             cout << "Game " << count << endl;
-                                            cout << " " << pc[c[0]] << " | " << pc[c[1]] << " | " << pc[c[2]] << endl;
+                                            cout << " " << playerchoose[c[0]] << " | " << playerchoose[c[1]] << " | " << playerchoose[c[2]] << endl;
                                             cout << "-----------" << endl;
-                                            cout << " " << pc[c[3]] << " | " << pc[c[4]] << " | " << pc[c[5]] << endl;
+                                            cout << " " << playerchoose[c[3]] << " | " << playerchoose[c[4]] << " | " << playerchoose[c[5]] << endl;
                                             cout << "-----------" << endl;
-                                            cout << " " << pc[c[6]] << " | " << pc[c[7]] << " | " << pc[c[8]] << endl;
+                                            cout << " " << playerchoose[c[6]] << " | " << playerchoose[c[7]] << " | " << playerchoose[c[8]] << endl;
                                             cout << endl;
                                             cout << "0" << endl;
                                         }
