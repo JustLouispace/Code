@@ -32,22 +32,22 @@ for c[0] in range (3):
                    count += 1
                    if pc[c[0]] == 'o' and pc[c[1]] == 'o' and pc[c[2]] == 'o' and pc[c[3]] == 'o' and pc[c[4]] == 'o' and pc[c[5]] == 'o' and pc[c[6]] == 'o' and pc[c[7]] == 'o' and pc[c[8]] == 'o':
                          co += 1
-                  #  if abs(countx - county) < 2:
-                  #       if won(c,1) + won(c,2) == 1 or (won(c,1) + won(c,2) == 0 and countx + county == 9): 
-                  #           print (" %s | %s | %s" % (pc[c[0]],pc[c[1]],pc[c[2]]))
-                  #           print("---+---+---")
-                  #           print (" %s | %s | %s" % (pc[c[3]],pc[c[4]],pc[c[5]]))
-                  #           print( "---+---+---")
-                  #           print (" %s | %s | %s" % (pc[c[6]],pc[c[7]],pc[c[8]]))
-                  #           if won(c,1): 
-                  #               res = 1
-                  #               print(res)
-                  #           elif won(c,2): 
-                  #               res = -1
-                  #               print(res)
-                  #           else: 
-                  #               res = 0
-                  #               print(res)
-                  #           print()
+                   if abs(countx - county) < 2:
+                        if won(c,1) + won(c,2) == 1 or (won(c,1) + won(c,2) == 0 and countx + county == 9): 
+                            print (" %s | %s | %s" % (pc[c[0]],pc[c[1]],pc[c[2]]))
+                            print("---+---+---")
+                            print (" %s | %s | %s" % (pc[c[3]],pc[c[4]],pc[c[5]]))
+                            print( "---+---+---")
+                            print (" %s | %s | %s" % (pc[c[6]],pc[c[7]],pc[c[8]]))
+                            if won(c,1): 
+                                res = 1
+                                print(res)
+                            elif won(c,2): 
+                                res = -1
+                                print(res)
+                            else: 
+                                res = 0
+                                print(res)
+                            print()
 print(co)
 print(count)
